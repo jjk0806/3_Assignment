@@ -17,6 +17,17 @@ public:
 		data = new T[capacity];
 	}
 
+	SimpleVector(const SimpleVector& vec)
+	{
+		currentCapacity = vec.currentCapacity;
+		currentSize = vec.currentSize;
+
+		data = new T[currentCapacity];
+
+		for (int i = 0; i < currentSize; i++)		
+			data[i] = vec.data[i];
+	}
+
 	int size()
 	{
 		return currentSize;
